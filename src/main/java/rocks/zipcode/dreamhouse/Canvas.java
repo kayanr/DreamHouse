@@ -29,7 +29,7 @@ public class Canvas
     public static Canvas getCanvas()
     {
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
+            canvasSingleton = new Canvas("BlueJ Shapes Demo", 500, 500,
                     Color.white);
         }
         canvasSingleton.setVisible(true);
@@ -45,7 +45,7 @@ public class Canvas
     private Image canvasImage;
     private List<Object> objects;
     private HashMap<Object, ShapeDescription> shapes;
-    
+
     /**
      * Create a Canvas.
      * @param title  title to appear in Canvas Frame
@@ -95,9 +95,9 @@ public class Canvas
      * @param  color            the color of the shape
      * @param  shape            the shape object to be drawn on the canvas
      */
-     // Note: this is a slightly backwards way of maintaining the shape
-     // objects. It is carefully designed to keep the visible shape interfaces
-     // in this project clean and simple for educational purposes.
+    // Note: this is a slightly backwards way of maintaining the shape
+    // objects. It is carefully designed to keep the visible shape interfaces
+    // in this project clean and simple for educational purposes.
     public void draw(Object referenceObject, String color, Shape shape)
     {
         objects.remove(referenceObject);   // just in case it was already there
@@ -105,7 +105,7 @@ public class Canvas
         shapes.put(referenceObject, new ShapeDescription(shape, color));
         redraw();
     }
- 
+
     /**
      * Erase a given shape's from the screen.
      * @param  referenceObject  the shape object to be erased 
@@ -152,7 +152,7 @@ public class Canvas
         try
         {
             Thread.sleep(milliseconds);
-        } 
+        }
         catch (Exception e)
         {
             // ignoring exception at the moment
@@ -170,7 +170,7 @@ public class Canvas
         }
         canvas.repaint();
     }
-       
+
     /**
      * Erase the whole canvas. (Does not repaint.)
      */
@@ -196,7 +196,7 @@ public class Canvas
             g.drawImage(canvasImage, 0, 0, null);
         }
     }
-    
+
     /************************************************************************
      * Inner class CanvasPane - the actual canvas component contained in the
      * Canvas frame. This is essentially a JPanel with added capability to
